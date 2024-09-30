@@ -10,10 +10,10 @@ public class EnemyStats : MonoBehaviour
     public float moveSpeed;        // Movement speed of the zombie
     private Vector3 targetPosition = Vector3.zero;
 
-    public float attackDamage;      // Damage dealt by the zombie
-    public float attackCooldown;
-    private float timeSinceLastAttack = 0f;
-    public bool canAttack;
+    //public float attackDamage;      // Damage dealt by the zombie
+    //public float attackCooldown;
+    //private float timeSinceLastAttack = 0f;
+    //public bool canAttack;
     public float maxHealth;
     public float currentHealth;
     // Start is called before the first frame update
@@ -44,6 +44,15 @@ public class EnemyStats : MonoBehaviour
         {
             currentHealth = 0;
 
+            Die();
+
         }
+    }
+
+    
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

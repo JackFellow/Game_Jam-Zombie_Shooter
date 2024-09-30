@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4911706858056602659}
   - component: {fileID: 5362492809580716123}
   - component: {fileID: 8799213682285196309}
+  - component: {fileID: 1890252137758528246}
   m_Layer: 0
   m_Name: NormalZombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,9 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   moveSpeed: 2
-  attackDamage: 0
-  attackCooldown: 0
-  canAttack: 0
   maxHealth: 0
   currentHealth: 0
 --- !u!54 &8799213682285196309
@@ -152,4 +150,20 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &1890252137758528246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481006687281361505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0157f08f6df7a47a410c24c79dcf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  attackCooldown: 1.5
+  canAttack: 0
+  playerHealth: {fileID: 0}

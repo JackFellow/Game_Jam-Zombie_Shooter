@@ -10,7 +10,7 @@ public class ZombieSpawner : MonoBehaviour
 
     public Transform[] spawnPoints;  // Array of spawn points
     public float spawnInterval = 5f; // Time interval between each spawn
-    public int spawnCount = 3;       // Number of zombies to spawn in each interval
+    public int spawnCount = 1;       // Number of zombies to spawn in each interval
 
     private const float SPAWN_DELAY = 1f; // Delay between individual spawns during a wave
 
