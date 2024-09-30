@@ -8,6 +8,8 @@ public class EnemyStats : MonoBehaviour
 
     public string name;        // Name of the zombie type for easy identification
     public float moveSpeed;        // Movement speed of the zombie
+    private Vector3 targetPosition = Vector3.zero;
+
     public float attackDamage;      // Damage dealt by the zombie
     public float attackCooldown;
     private float timeSinceLastAttack = 0f;
@@ -24,7 +26,13 @@ public class EnemyStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        // Calculate the direction towards (0, 0, 0)
+        Vector3 direction = (targetPosition - transform.position).normalized;
+
+        // Move the enemy towards the target position
+        transform.position += direction * moveSpeed * Time.deltaTime;
+
     }
     public void Takedamage ( float dam)
     {
