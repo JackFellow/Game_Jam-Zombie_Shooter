@@ -104,7 +104,6 @@ public class PlayerScript : MonoBehaviour
 
     void Scroll()
     {
-        Debug.Log("Scroll");
 
         if (scroll.ReadValue<float>() > 0)
         {

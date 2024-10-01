@@ -8,12 +8,12 @@ public class EnemyAttack : MonoBehaviour
     public float attackCooldown = 1.5f; // default was 1.5
     private float timeSinceLastAttack = 0f;
     public bool canAttack = false;
-    public PlayerHealth playerHealth;
 
    
 
     private void Awake()
     {
+        /*
         // Find the player health component in the scene
         GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
         foreach (var player in playerObjects)
@@ -23,13 +23,12 @@ public class EnemyAttack : MonoBehaviour
                 playerHealth = player.GetComponent<PlayerHealth>();
             }
         }
+        */
     }
 
     // Update is called once per frame
     void Update()
-    {
-
-       
+    {    
         timeSinceLastAttack += Time.deltaTime;
 
         // Set the attack condition
@@ -52,12 +51,9 @@ public class EnemyAttack : MonoBehaviour
 
     private void AttackPlayer()
     {
-        if (playerHealth != null)
-        {
-            playerHealth.Takedamage(attackDamage);
-            //Debug.Log("Attacking Player! Damage: " + attackDamage);
-            ResetAttack();
-        }
+        PlayerHealth.Instance.Takedamage(attackDamage);
+        //Debug.Log("Attacking Player! Damage: " + attackDamage);
+        ResetAttack();
     }
 
     private void AttackEnemy(GameObject enemy)

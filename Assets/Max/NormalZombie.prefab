@@ -122,7 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   moveSpeed: 2
-  playerAmmo: {fileID: 0}
   maxHealth: 20
   currentHealth: 0
 --- !u!54 &8799213682285196309
@@ -150,7 +149,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 1
 --- !u!114 &1890252137758528246
 MonoBehaviour:
@@ -167,4 +166,3 @@ MonoBehaviour:
   attackDamage: 20
   attackCooldown: 1.5
   canAttack: 0
-  playerHealth: {fileID: 0}

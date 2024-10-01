@@ -10,7 +10,7 @@ public class EnemyStats : MonoBehaviour
     public float moveSpeed;        // Movement speed of the zombie
     private Vector3 targetPosition = Vector3.zero;
     int ammoToAdd = 5;
-    public PlayerHealth playerAmmo;
+    //public PlayerHealth playerAmmo;
 
 
     //public bool canAttack;
@@ -20,7 +20,7 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-
+        /*
         GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
         foreach (var player in playerObjects)
         {
@@ -29,7 +29,7 @@ public class EnemyStats : MonoBehaviour
                 playerAmmo = player.GetComponent<PlayerHealth>();
             }
         }
-
+        */
     }
 
     // Update is called once per frame
@@ -70,7 +70,8 @@ public class EnemyStats : MonoBehaviour
         float dropChance = Random.Range(0f, 1f);
         if (dropChance<= 0.5)
         {
-            playerAmmo.AddAmmo(ammoToAdd);
+            //playerAmmo.AddAmmo(ammoToAdd);
+            EventManager.Instance.Reload(ammoToAdd);
 
         }
         Destroy(gameObject);
