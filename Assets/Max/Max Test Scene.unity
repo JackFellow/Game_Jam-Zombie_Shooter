@@ -610,6 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  totalAmmo: 0
 --- !u!65 &1987043955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -706,6 +707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2006761080}
   - component: {fileID: 2006761081}
+  - component: {fileID: 2006761082}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -740,15 +742,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a835079958cfdf49a3bc948ab746706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1: {fileID: 5481006687281361505, guid: 3cf518182f4b24243a9f71051c527efd, type: 3}
-  enemy2: {fileID: 1175651638527599596, guid: 7f020a197916fc449ae5cc4074ed9389, type: 3}
-  enemy3: {fileID: 6124840521166640135, guid: 02ae317e8fd615c4d90e9bad7b612ea5, type: 3}
+--- !u!114 &2006761082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006761078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561b0357618e6e64b8c320549ca791ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy1: {fileID: 6124840521166640135, guid: 02ae317e8fd615c4d90e9bad7b612ea5, type: 3}
+  enemy2: {fileID: 5481006687281361505, guid: 3cf518182f4b24243a9f71051c527efd, type: 3}
+  enemy3: {fileID: 1175651638527599596, guid: 7f020a197916fc449ae5cc4074ed9389, type: 3}
   spawnPoints:
   - {fileID: 18523654}
   - {fileID: 1614156706}
   - {fileID: 1014678106}
+  startingWave: 1
+  zombiesPerWave: 5
+  timeBetweenWaves: 10
+  spawnRate: 1
   spawnInterval: 5
-  spawnCount: 3
+  spawnCount: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

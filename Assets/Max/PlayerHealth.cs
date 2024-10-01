@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void AddAmmo(int amount)
     {
-        Debug.Log("Current ammo  before adding ammo is :" + totalAmmo);
+        //Debug.Log("Current ammo  before adding ammo is :" + totalAmmo);
         totalAmmo += amount;
         Debug.Log("Ammo added: " + amount + ". Total ammo: " + totalAmmo);
     }
