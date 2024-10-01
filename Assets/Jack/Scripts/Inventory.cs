@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    
     public static Inventory Instance { get; private set; }
 
     private void Awake()
@@ -18,6 +19,7 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 
     Rigidbody rb;
 
@@ -27,14 +29,22 @@ public class Inventory : MonoBehaviour
 
     Weapon currentWeapon;
 
+    public int weaponIndex = 0;
+
+    bool canFire = true;
+
     private void OnEnable()
     {
         EventManager.Instance.onShoot += Shoot;
+        EventManager.Instance.onReload += Reload;
+        EventManager.Instance.onSwitch += SwitchWeapon;
     }
 
     private void OnDisable()
     {
-        
+        EventManager.Instance.onShoot -= Shoot;
+        EventManager.Instance.onReload -= Reload;
+        EventManager.Instance.onSwitch -= SwitchWeapon;
     }
 
     private void Start()
@@ -54,16 +64,51 @@ public class Inventory : MonoBehaviour
 
     void Shoot()
     {
-        --currentWeapon.ammo;
+        if (canFire)
+        {
+            if (currentWeapon.ammo > 0 || currentWeapon.maxAmmo == -1)
+            {
+                StartCoroutine(ShootCooldown());
 
-        GameObject projectile = Instantiate(currentWeapon.projectile, SpawnLocation.transform.position, SpawnLocation.transform.rotation);
-        rb = projectile.GetComponent<Rigidbody>();
+                --currentWeapon.ammo;
 
-        rb.velocity = projectile.transform.forward * currentWeapon.speed;
+                GameObject projectile = Instantiate(currentWeapon.projectile, SpawnLocation.transform.position, SpawnLocation.transform.rotation);
+                rb = projectile.GetComponent<Rigidbody>();
+
+                rb.velocity = projectile.transform.forward * currentWeapon.speed;
+            }
+        }
     }
 
-    void SwitchWeapon()
+    void SwitchWeapon(int index)
     {
+        currentWeapon.prefab.SetActive(false);
 
+        if (index >= Weapons.Length)
+        {
+            weaponIndex = 0;
+            currentWeapon = Weapons[weaponIndex];
+        }
+        else if (index < 0)
+        {
+            weaponIndex = Weapons.Length - 1;
+            currentWeapon = Weapons[weaponIndex];
+        }
+        else
+        {
+            weaponIndex = index;
+            currentWeapon = Weapons[weaponIndex];
+        }
+
+        currentWeapon.prefab.SetActive(true);
+    }
+
+    IEnumerator ShootCooldown()
+    {
+        canFire = false;
+
+        yield return new WaitForSeconds(currentWeapon.fireRate);
+
+        canFire = true;
     }
 }

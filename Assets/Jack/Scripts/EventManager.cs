@@ -22,7 +22,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    #region Inputs
+    #region Weapons
     public event Action onShoot;
     public void Shoot()
     {
@@ -32,5 +32,26 @@ public class EventManager : MonoBehaviour
             onShoot();
         }
     }
+
+    public event Action<int> onSwitch;
+    public void Switch(int index)
+    {
+        Debug.Log("Switch");
+
+        if (onSwitch != null)
+        {
+            onSwitch(index);
+        }
+    }
+
+    public event Action<int> onReload;
+    public void Reload(int amount)
+    {
+        if (onReload != null)
+        {
+            onReload(amount);
+        }
+    }
+
     #endregion
 }
