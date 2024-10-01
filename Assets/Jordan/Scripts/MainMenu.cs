@@ -39,5 +39,14 @@ public class MainMenu : MonoBehaviour
         HowtoPlay.SetActive(true);
     }
 
-        
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void StartGame()
+    {
+
+    }
+
 }
