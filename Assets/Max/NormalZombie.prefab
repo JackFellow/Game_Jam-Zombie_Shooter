@@ -122,7 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   moveSpeed: 2
-  maxHealth: 0
+  playerAmmo: {fileID: 0}
+  maxHealth: 20
   currentHealth: 0
 --- !u!54 &8799213682285196309
 Rigidbody:

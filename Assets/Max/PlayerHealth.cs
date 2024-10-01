@@ -8,6 +8,10 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
 
+    //At the moment i have done the ammo adding in player health
+    public int totalAmmo =0;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= dam;
         //Debug.Log($"{currentHealth}");
-        Debug.Log("The player health is:" + currentHealth + "player has taken " + dam + "damage");
+        //Debug.Log("The player health is:" + currentHealth + "player has taken " + dam + "damage");
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health stays within bounds
         //healthImage.fillAmount = currentHealth / maxHealth;
         if (currentHealth <= 0)
@@ -43,5 +47,11 @@ public class PlayerHealth : MonoBehaviour
 
         }
 
+    }
+    public void AddAmmo(int amount)
+    {
+        Debug.Log("Current ammo  before adding ammo is :" + totalAmmo);
+        totalAmmo += amount;
+        Debug.Log("Ammo added: " + amount + ". Total ammo: " + totalAmmo);
     }
 }

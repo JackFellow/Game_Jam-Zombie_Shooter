@@ -28,6 +28,8 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+       
         timeSinceLastAttack += Time.deltaTime;
 
         // Set the attack condition
@@ -53,7 +55,7 @@ public class EnemyAttack : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.Takedamage(attackDamage);
-            Debug.Log("Attacking Player! Damage: " + attackDamage);
+            //Debug.Log("Attacking Player! Damage: " + attackDamage);
             ResetAttack();
         }
     }
@@ -64,7 +66,7 @@ public class EnemyAttack : MonoBehaviour
         if (enemyHealth != null)
         {
             enemyHealth.Takedamage(attackDamage); // Adjust for enemy's health class
-            Debug.Log("Attacking Enemy! Damage: " + attackDamage);
+            //Debug.Log("Attacking Enemy! Damage: " + attackDamage);
             ResetAttack();
         }
     }
