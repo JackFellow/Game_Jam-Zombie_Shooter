@@ -45,6 +45,7 @@ public class EnemyStats : MonoBehaviour
 
         // Move the enemy towards the target position
         transform.position += direction * moveSpeed * Time.deltaTime;
+        transform.LookAt(transform.position);
 
     }
     public void Takedamage ( float dam)

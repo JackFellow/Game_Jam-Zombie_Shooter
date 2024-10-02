@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561b0357618e6e64b8c320549ca791ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1: {fileID: 6124840521166640135, guid: 02ae317e8fd615c4d90e9bad7b612ea5, type: 3}
+  enemy1: {fileID: 8455510376657503516, guid: bc40dc85487eb304687268cc9e467265, type: 3}
   enemy2: {fileID: 5481006687281361505, guid: 3cf518182f4b24243a9f71051c527efd, type: 3}
   enemy3: {fileID: 1175651638527599596, guid: 7f020a197916fc449ae5cc4074ed9389, type: 3}
   spawnPoints:

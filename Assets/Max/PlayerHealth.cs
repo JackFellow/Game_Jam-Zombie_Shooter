@@ -45,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= dam;
         //Debug.Log($"{currentHealth}");
         //Debug.Log("The player health is:" + currentHealth + "player has taken " + dam + "damage");
+        Debug.Log(currentHealth);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health stays within bounds
         //healthImage.fillAmount = currentHealth / maxHealth;
         if (currentHealth <= 0)
