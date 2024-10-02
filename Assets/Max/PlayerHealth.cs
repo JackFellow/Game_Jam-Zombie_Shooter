@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth Instance { get; private set; }
 
-
+    public TMP_Text Text;
     public float maxHealth = 100f;
     public float currentHealth;
 
@@ -46,7 +47,9 @@ public class PlayerHealth : MonoBehaviour
         //Debug.Log($"{currentHealth}");
         //Debug.Log("The player health is:" + currentHealth + "player has taken " + dam + "damage");
         Debug.Log(currentHealth);
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health stays within bounds
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        Text.text = currentHealth.ToString();
+        // Ensure health stays within bounds
         //healthImage.fillAmount = currentHealth / maxHealth;
         if (currentHealth <= 0)
         {

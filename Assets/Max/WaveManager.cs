@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class WaveManager : MonoBehaviour
     public GameObject enemy3;  // Prefab for runner zombie
 
     public Transform[] spawnPoints;
-
+    public TMP_Text WaveText;
     public int startingWave = 1;
     private int currentWave;
 
@@ -38,6 +39,7 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenWaves);
             StartCoroutine(SpawnWave(currentWave));
             currentWave++;
+            WaveText.text = currentWave.ToString();
         }
     }
 

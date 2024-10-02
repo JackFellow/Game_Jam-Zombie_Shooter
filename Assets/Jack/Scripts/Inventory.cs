@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
+  
     
     public static Inventory Instance { get; private set; }
 
@@ -25,6 +27,8 @@ public class Inventory : MonoBehaviour
 
     public Weapon[] Weapons;
 
+    public TMP_Text AmmoText;
+
     public GameObject SpawnLocation;
 
     Weapon currentWeapon;
@@ -38,6 +42,7 @@ public class Inventory : MonoBehaviour
         EventManager.Instance.onShoot += Shoot;
         EventManager.Instance.onReload += Reload;
         EventManager.Instance.onSwitch += SwitchWeapon;
+       
     }
 
     private void OnDisable()
@@ -58,6 +63,7 @@ public class Inventory : MonoBehaviour
     public void Reload(int reloadAmmo)
     {
         currentWeapon.ammo += reloadAmmo;
+        AmmoText.text = currentWeapon.ammo.ToString();
 
         currentWeapon.ammo = Mathf.Clamp(currentWeapon.ammo, 0, currentWeapon.maxAmmo);
     }
@@ -69,9 +75,10 @@ public class Inventory : MonoBehaviour
             if (currentWeapon.ammo > 0 || currentWeapon.maxAmmo == -1)
             {
                 StartCoroutine(ShootCooldown());
-
+               
                 --currentWeapon.ammo;
 
+                AmmoText.text = currentWeapon.ammo.ToString();
                 GameObject projectile = Instantiate(currentWeapon.projectile, SpawnLocation.transform.position, SpawnLocation.transform.rotation);
                 rb = projectile.GetComponent<Rigidbody>();
 
@@ -88,16 +95,19 @@ public class Inventory : MonoBehaviour
         {
             weaponIndex = 0;
             currentWeapon = Weapons[weaponIndex];
+            AmmoText.text = currentWeapon.ammo.ToString();
         }
         else if (index < 0)
         {
             weaponIndex = Weapons.Length - 1;
             currentWeapon = Weapons[weaponIndex];
+            AmmoText.text = currentWeapon.ammo.ToString();
         }
         else
         {
             weaponIndex = index;
             currentWeapon = Weapons[weaponIndex];
+            AmmoText.text = currentWeapon.ammo.ToString();
         }
 
         currentWeapon.prefab.SetActive(true);
