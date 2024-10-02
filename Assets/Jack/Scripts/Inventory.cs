@@ -27,9 +27,11 @@ public class Inventory : MonoBehaviour
 
     public Weapon[] Weapons;
 
-    public TMP_Text AmmoText;
+    TMP_Text AmmoText;
 
     public GameObject SpawnLocation;
+
+ 
 
     Weapon currentWeapon;
 
@@ -58,6 +60,7 @@ public class Inventory : MonoBehaviour
         {
             currentWeapon = Weapons[0];
         }
+      
     }
 
     public void Reload(int reloadAmmo)
@@ -70,12 +73,12 @@ public class Inventory : MonoBehaviour
 
     void Shoot()
     {
-        if (canFire)
+        if (canFire && PauseMenu.isPaused is false)
         {
             if (currentWeapon.ammo > 0 || currentWeapon.maxAmmo == -1)
             {
                 StartCoroutine(ShootCooldown());
-               
+                AmmoText = GameObject.FindGameObjectWithTag("AmmoUi").GetComponent<TMP_Text>();
                 --currentWeapon.ammo;
 
                 AmmoText.text = currentWeapon.ammo.ToString();

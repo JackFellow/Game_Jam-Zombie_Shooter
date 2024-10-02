@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class MainMenu : MonoBehaviour
         start.SetActive(true);
         settings.SetActive(false);
         HowtoPlay.SetActive(false);
+       
 
 
     }
@@ -46,7 +48,10 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-
+        SceneManager.LoadScene("Main Game");
+        PauseMenu.isDead = false;
+        PauseMenu.isPaused = false;
+       // Cursor.visible = false;
     }
 
 }

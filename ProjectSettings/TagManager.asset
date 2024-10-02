@@ -6,16 +6,18 @@ TagManager:
   tags:
   - Enemy
   - map
+  - AmmoUi
+  - HealthUI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - AmmoUI
   - Water
   - UI
   - Player
   - Bullet
-  - 
+  - HealthUI
   - 
   - MiniMap
   - 

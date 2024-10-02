@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour
 
     Vector2 lookDirection;
 
+   
     float verticalRotation = 0f;
     float horizontalRotation = 0f;
 
@@ -79,8 +80,11 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnLook();
-        Scroll();
+      
+            OnLook();
+            Scroll();
+        
+       
     }
 
     void OnLook()
