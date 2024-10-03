@@ -102,6 +102,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene("Main Game");
+      
         PlayerHealth.Instance.currentHealth = 100;
         
         
@@ -115,5 +116,6 @@ public class PauseMenu : MonoBehaviour
         PlayerHealth.Instance.currentHealth = 100;
         Time.timeScale = 0f;
         SceneManager.LoadScene("Jordan");
+       
     }
 }

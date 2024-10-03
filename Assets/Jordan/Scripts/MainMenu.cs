@@ -51,6 +51,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Main Game");
         PauseMenu.isDead = false;
         PauseMenu.isPaused = false;
+       
+       
        // Cursor.visible = false;
     }
 

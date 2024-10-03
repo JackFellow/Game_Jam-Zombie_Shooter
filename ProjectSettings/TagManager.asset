@@ -8,6 +8,8 @@ TagManager:
   - map
   - AmmoUi
   - HealthUI
+  - damage
+  - Weapons
   layers:
   - Default
   - TransparentFX
