@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour
 
     void Shoot()
     {
-        if (canFire && PauseMenu.isPaused is false)
+        if (canFire && PauseMenu.isPaused is false && !PauseMenu.isDead)
         {
             if (currentWeapon.ammo > 0 || currentWeapon.maxAmmo == -1)
             {
@@ -92,30 +92,33 @@ public class Inventory : MonoBehaviour
 
     void SwitchWeapon(int index)
     {
-        currentWeapon.prefab.SetActive(false);
-        AmmoText = GameObject.FindGameObjectWithTag("AmmoUi").GetComponent<TMP_Text>();
         
-        if (index >= Weapons.Length)
-        {
-            weaponIndex = 0;
-            currentWeapon = Weapons[weaponIndex];
-            AmmoText.text = currentWeapon.ammo.ToString();
-            
-        }
-        else if (index < 0)
-        {
-            weaponIndex = Weapons.Length - 1;
-            currentWeapon = Weapons[weaponIndex];
-            AmmoText.text = currentWeapon.ammo.ToString();
-           
-        }
-        else
-        {
-            weaponIndex = index;
-            currentWeapon = Weapons[weaponIndex];
-            AmmoText.text = currentWeapon.ammo.ToString();
-          
-        }
+        
+            currentWeapon.prefab.SetActive(false);
+            AmmoText = GameObject.FindGameObjectWithTag("AmmoUi").GetComponent<TMP_Text>();
+            if (index >= Weapons.Length)
+            {
+                weaponIndex = 0;
+                currentWeapon = Weapons[weaponIndex];
+                AmmoText.text = currentWeapon.ammo.ToString();
+
+            }
+            else if (index < 0)
+            {
+                weaponIndex = Weapons.Length - 1;
+                currentWeapon = Weapons[weaponIndex];
+                AmmoText.text = currentWeapon.ammo.ToString();
+
+            }
+            else
+            {
+                weaponIndex = index;
+                currentWeapon = Weapons[weaponIndex];
+                AmmoText.text = currentWeapon.ammo.ToString();
+
+            }
+        
+       
 
         currentWeapon.prefab.SetActive(true);
     }

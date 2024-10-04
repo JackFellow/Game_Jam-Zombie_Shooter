@@ -82,7 +82,11 @@ public class PlayerScript : MonoBehaviour
     {
       
             OnLook();
+        if (!PauseMenu.isDead && !PauseMenu.isPaused)
+        {
             Scroll();
+        }
+            
         
        
     }
