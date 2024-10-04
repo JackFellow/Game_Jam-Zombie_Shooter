@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 
 public class WaveManager : MonoBehaviour
 {
@@ -64,11 +65,13 @@ public class WaveManager : MonoBehaviour
         // Randomly choose which type of zombie to spawn
         int randomZombieType = Random.Range(1, 4);
         GameObject zombieToSpawn = null;
+        Transform PlayerTransform = GameObject.FindWithTag("Player").transform; // finds player's co-ordinates
 
         switch (randomZombieType)
         {
             case 1:
                 zombieToSpawn = enemy1; // Average zombie
+               
                 break;
             case 2:
                 zombieToSpawn = enemy2; // Tank zombie
@@ -77,8 +80,11 @@ public class WaveManager : MonoBehaviour
                 zombieToSpawn = enemy3; // Runner zombie
                 break;
         }
+        Vector3 PlayerDiraction = PlayerTransform.position - spawnPoint.position; // sets the zombies unique spawn rotation
 
-        Instantiate(zombieToSpawn, spawnPoint.position, Quaternion.identity);
+        Quaternion FixedRotation = Quaternion.LookRotation(PlayerDiraction); // when the roation is instatied it will use the roation that is facing the player
+
+        Instantiate(zombieToSpawn, spawnPoint.position, FixedRotation);
     }
 
     
