@@ -102,7 +102,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene("Main Game");
-      
         PlayerHealth.Instance.currentHealth = 100;
         
         
