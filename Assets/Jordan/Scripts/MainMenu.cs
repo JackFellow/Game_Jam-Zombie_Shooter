@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.Music("Theme");
         start.SetActive(true);
         settings.SetActive(false);
         HowtoPlay.SetActive(false);
@@ -48,6 +49,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        AudioManager.instance.Music("Normal");
         SceneManager.LoadScene("Main Game");
         PauseMenu.isDead = false;
         PauseMenu.isPaused = false;
