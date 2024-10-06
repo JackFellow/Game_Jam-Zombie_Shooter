@@ -86,6 +86,7 @@ public class EnemyStats : MonoBehaviour
 
         }
         Destroy(gameObject);
+        PointsManager.points += 1;
         int num = Random.Range(0,3);
 
         switch (num)
