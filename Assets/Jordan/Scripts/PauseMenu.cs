@@ -78,7 +78,8 @@ public class PauseMenu : MonoBehaviour
     public void pasueGame()
     {
 
-
+        AudioManager.instance.musicSource.Pause();
+        AudioManager.instance.sfxSource.Pause();
         hud.SetActive(false);
         pause.SetActive(true);
         Time.timeScale = 0f;
@@ -90,6 +91,8 @@ public class PauseMenu : MonoBehaviour
 
     public void resumeGame()
     {
+        AudioManager.instance.musicSource.UnPause();
+        AudioManager.instance.sfxSource.UnPause();
         pause.SetActive(false);
         hud.SetActive(true);
         Time.timeScale = 1f;
@@ -99,6 +102,9 @@ public class PauseMenu : MonoBehaviour
 
     public void restartGame()
     {
+        AudioManager.instance.musicSource.Play();
+        AudioManager.instance.Music("Normal");
+        AudioManager.instance.sfxSource.Play();
         Time.timeScale = 1f;
         isPaused = false;
         isDead = false;

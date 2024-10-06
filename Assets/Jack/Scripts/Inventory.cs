@@ -101,6 +101,7 @@ public class Inventory : MonoBehaviour
                 weaponIndex = 0;
                 currentWeapon = Weapons[weaponIndex];
                 AmmoText.text = currentWeapon.ammo.ToString();
+                AudioManager.instance.SFX("Switch");
 
             }
             else if (index < 0)
@@ -108,15 +109,17 @@ public class Inventory : MonoBehaviour
                 weaponIndex = Weapons.Length - 1;
                 currentWeapon = Weapons[weaponIndex];
                 AmmoText.text = currentWeapon.ammo.ToString();
+                AudioManager.instance.SFX("Switch");
 
-            }
+        }
             else
             {
                 weaponIndex = index;
                 currentWeapon = Weapons[weaponIndex];
                 AmmoText.text = currentWeapon.ammo.ToString();
+                AudioManager.instance.SFX("Switch");
 
-            }
+        }
         
        
 

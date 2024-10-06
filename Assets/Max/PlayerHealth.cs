@@ -53,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
         
             currentHealth -= dam;
         DamageUI.isDamage = true;
+        AudioManager.instance.SFX("hurt");
             //Debug.Log($"{currentHealth}");
             //Debug.Log("The player health is:" + currentHealth + "player has taken " + dam + "damage");
             Debug.Log(currentHealth);
@@ -62,7 +63,9 @@ public class PlayerHealth : MonoBehaviour
             if (currentHealth <= 0)
             {
                 PauseMenu.isDead = true;
-                //if the players health is 0 they are destoyed and the game manager is notified
+            //if the players health is 0 they are destoyed and the game manager is notified
+            AudioManager.instance.Music("dead");
+            AudioManager.instance.SFX("dead");
                 currentHealth = 0;
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 //AudioManager.instance.musicSource.Stop();

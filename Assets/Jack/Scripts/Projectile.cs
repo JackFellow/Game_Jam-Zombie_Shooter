@@ -10,6 +10,11 @@ public class Projectile : MonoBehaviour
 
     public GameObject prefab;
 
+
+    private void Start()
+    {
+        AudioManager.instance.SFX("GunShots");
+    }
     private void FixedUpdate()
     {
         if (Mathf.Abs(prefab.transform.position.x) > despawnRadius || Mathf.Abs(prefab.transform.position.y) > despawnRadius || Mathf.Abs(prefab.transform.position.z) > despawnRadius)

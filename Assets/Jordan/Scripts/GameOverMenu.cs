@@ -20,6 +20,7 @@ public class GameOverMenu : MonoBehaviour
         if (PauseMenu.isDead)
         {
             GameOver();
+           
         }
         else
         {
@@ -29,6 +30,9 @@ public class GameOverMenu : MonoBehaviour
 
     public void GameOver()
     {
+        
+        
+        AudioManager.instance.sfxSource.Stop();
         GameOverScreen.SetActive(true);
         HUD.SetActive(false);
         Time.timeScale = 0f;

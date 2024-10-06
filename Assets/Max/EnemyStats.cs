@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
     public float moveSpeed;        // Movement speed of the zombie
     private Vector3 targetPosition = Vector3.zero;
     int ammoToAdd = 5;
+   
     //public PlayerHealth playerAmmo;
 
 
@@ -20,6 +21,14 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        int num = Random.Range(0, 3);
+        switch (num)
+        {
+            case 0: AudioManager.instance.SFX("walk"); break;
+            case 1: AudioManager.instance.SFX("walk2"); break;
+            case 2: AudioManager.instance.SFX("walk3"); break;
+        }
+       
         /*
         GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
         foreach (var player in playerObjects)
@@ -59,6 +68,7 @@ public class EnemyStats : MonoBehaviour
             currentHealth = 0;
 
             Die();
+           
 
         }
     }
@@ -76,5 +86,17 @@ public class EnemyStats : MonoBehaviour
 
         }
         Destroy(gameObject);
+        int num = Random.Range(0,3);
+
+        switch (num)
+        {
+            case 0: AudioManager.instance.SFX("zombieDead"); break;
+            case 1: AudioManager.instance.SFX("zombieDead2"); break;
+            case 2: AudioManager.instance.SFX("zombieDead3"); break;
+        }
+        Debug.Log(num);
+
     }
+
+    
 }
