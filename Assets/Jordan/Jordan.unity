@@ -8635,10 +8635,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You play as a young boy frolicing in the cropsfileds of the countryside
-    ahaving the best time of his life. Until he collapses now he is a soldier that
-    is looming danger with hoards of zombies coming to eat his flesh. He must kill
-    as many zombies as possible before they kill him first. '
+  m_text: 'You play as a young boy frolicing in the cropsfileds of the countryside,
+    having the best time of his life. However he collapses, now he is a soldier that
+    is in danger with hoards of zombies coming to eat his flesh. He must kill as
+    many zombies as possible before they kill him first. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f315a79c2b872004d89650f3c93dfd73, type: 2}
   m_sharedMaterial: {fileID: 3906122066707939046, guid: f315a79c2b872004d89650f3c93dfd73,
@@ -16580,7 +16580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1226520515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23616,7 +23616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1774245638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25938,7 +25938,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Controls:\n\nMouse: Move around\n\nLeft Click Mouse: Shooty Weapon \n\nMouse
+  m_text: "Controls:\n\nMouse: Move around\n\nLeft Click Mouse: Shoot Weapon \n\nMouse
     Scroll Wheel: Switch Weapon \n\nEsc: Pause Game"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f315a79c2b872004d89650f3c93dfd73, type: 2}
