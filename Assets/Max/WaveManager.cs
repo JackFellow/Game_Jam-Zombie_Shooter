@@ -40,12 +40,14 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenWaves);
             StartCoroutine(SpawnWave(currentWave));
             currentWave++;
-            WaveText.text = currentWave.ToString();
+            int WaveTextNo = currentWave - 1;
+            WaveText.text = WaveTextNo.ToString();
         }
     }
 
     private IEnumerator SpawnWave(int waveNumber)
     {
+      
         Debug.Log("WaveNumber is:"+ waveNumber);
         // Increase the number of zombies per wave
         int numberOfZombiesToSpawn = zombiesPerWave + waveNumber * 2;

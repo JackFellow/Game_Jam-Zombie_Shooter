@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     float verticalRotation = 0f;
     float horizontalRotation = 0f;
 
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = VolumeSlider.Mousesensitivty;
 
     private void Awake()
     {
@@ -80,14 +80,15 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        mouseSensitivity = VolumeSlider.Mousesensitivty;
             OnLook();
         if (!PauseMenu.isDead && !PauseMenu.isPaused)
         {
             Scroll();
-        }
             
-        
+        }
+
+       
        
     }
 

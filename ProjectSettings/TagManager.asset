@@ -10,6 +10,7 @@ TagManager:
   - HealthUI
   - damage
   - Weapons
+  - Mouse
   layers:
   - Default
   - TransparentFX
